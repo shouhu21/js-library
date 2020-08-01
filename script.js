@@ -1,5 +1,7 @@
-let myLibrary = ['TestBook'];
+// array for book objects
+let myLibrary = [];
 
+// book constructor
 function book(title, author, pages, read) {
   this.title = title,
   this.author = author,
@@ -8,18 +10,18 @@ function book(title, author, pages, read) {
   this.info = function() {
     return title + ' by ' + author + ' ' +  pages + ' pages, ' + read;
  };
-};
+}
 
+// function which renders the book object to html
 function render() {
-  console.log(myLibrary);
-};
+  myLibrary.forEach(book(title, autor, pages, read) => {
+    book.info().querySelector('.library__book');
+  });
+}
 
-const addBook = (title, author, pages, read) => {
+
+// function which adds a book to the library array
+const addBookToLibrary = (title, author, pages, read) => {
   new book === title,author,pages,read;
-  book.title;
-};
-
-let theHobbit = new book('The Hobbit,','J.R.R Tolkien,', '295', 'not yet read');
-
-console.log(theHobbit.info());
-render();
+  myLibrary.push(book);
+}
