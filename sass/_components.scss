@@ -1,0 +1,97 @@
+//heading
+.header__library {
+  font-family: 'Cooper';
+  font-size: 10rem;
+  color: #4E4859;
+  margin: 3rem 2rem;
+  padding: .4rem;
+}
+
+//add book button
+.button__book {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  font-family: 'Cooper';
+  font-size: 4.5rem;
+  color: #4E4859;
+  border: .4rem solid;
+  border-radius: .9rem;
+  margin: 3rem 3rem;
+  padding: .4rem;
+  width: 30%;
+
+  &:hover {
+  animation: scale-up-center 0.3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  }
+
+}
+
+
+//book card
+.library {
+  display: flex;
+
+      &__book {
+      display: grid;
+      z-index: 2;
+      font-size: 3rem;
+      font-family: 'Cooper';
+      grid-template-columns: 50% 50%;
+      grid-template-rows: repeat(4, 1fr);
+      background-color: #C35F75;
+      color: #FFFFFF;
+      height: 40rem;
+      width: 30rem;
+      margin: 10rem;
+      border-radius: .8rem;
+      display: grid;
+        	
+     	 &-close {
+	 display: flex;
+	 align-items: center;
+	 justify-content: flex-start;
+	 margin-left: 1.5rem;
+	 transform: translateY(-1rem);
+	 z-index: 10;
+     	 color: #4E4859; 
+     	 grid-column: 1 / span 1;
+	 font-size: 6rem;
+     	 }
+
+     	 &-read {
+	 display: flex;
+	 align-items: center;
+	 justify-content: flex-end;
+	 margin-right: 1.5rem;
+	 transform: translateY(-1rem);
+
+	 z-index: 10;
+     	 color: #4E4859; 
+     	 grid-column: 2 / span 1;
+	 font-size: 6rem;
+     	 }
+
+     	 &-name {
+	 z-index: 10;
+	 margin-left: 3rem;
+	 font-size: 3.5rem;
+     	 grid-column: 1 / span 2;
+     	 grid-row: 2 / span 1;
+     	 }
+
+     	 &-author{
+         z-index: 10;
+	 margin-left: 1.5rem;
+     	 grid-column: 1 / span 2;
+     	 grid-row: 3 / span 1;
+     	 }
+
+     	 &-pages {
+	 z-index: 10;
+	 margin-left: 1.5rem;
+     	 grid-column: 1 / span 2;
+     	 grid-row: 4 / span 1;
+     	 }
+  }
+}

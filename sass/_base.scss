@@ -6,43 +6,23 @@
 
 body {
   height: 80vh;
-  background-color: #D5C9BC;
+  background-color: #EDEAE4;
+  position: relative;
 }
 
 // header
 header {
-  background-color: #4D8296;
+  background-color: #EDEAE4;
+  border-bottom: .8rem solid #4E4859;
   height: 20vh;
   display: flex;
+  flex-flow: column;
   justify-content: space-between;
   align-items: center;
 }
 
-.header__library,
-.header__book {
-  font-family: Latin Modern Sans;
-  font-size: 5rem;
-  color: #DDD6EA;
-  border: .4rem solid;
-  margin-left: 3rem;
-  margin-right: 3rem;
-  padding: .4rem;
+.button__book-container {
+	display: flex;
+	justify-content: center;
 }
 
-//book card
-.library {
-  display: flex;
-
-      &__book {
-      background-color: #C35F75;
-      height: 35rem;
-      width: 25rem;
-      margin: 10rem;
-
-      display: grid;
-        
-      &--close {
-
-      }
-  }
-}

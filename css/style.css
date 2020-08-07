@@ -5,30 +5,107 @@
 
 body {
   height: 80vh;
-  background-color: #D5C9BC; }
+  background-color: #EDEAE4;
+  position: relative; }
 
 header {
-  background-color: #4D8296;
+  background-color: #EDEAE4;
+  border-bottom: .8rem solid #4E4859;
   height: 20vh;
   display: flex;
+  flex-flow: column;
   justify-content: space-between;
   align-items: center; }
 
-.header__library,
-.header__book {
-  font-family: Latin Modern Sans;
-  font-size: 5rem;
-  color: #DDD6EA;
-  border: .4rem solid;
-  margin-left: 3rem;
-  margin-right: 3rem;
+.button__book-container {
+  display: flex;
+  justify-content: center; }
+
+.header__library {
+  font-family: 'Cooper';
+  font-size: 10rem;
+  color: #4E4859;
+  margin: 3rem 2rem;
   padding: .4rem; }
+
+.button__book {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  font-family: 'Cooper';
+  font-size: 4.5rem;
+  color: #4E4859;
+  border: .4rem solid;
+  border-radius: .9rem;
+  margin: 3rem 3rem;
+  padding: .4rem;
+  width: 30%; }
+  .button__book:hover {
+    animation: scale-up-center 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) both; }
 
 .library {
   display: flex; }
   .library__book {
+    display: grid;
+    z-index: 2;
+    font-size: 3rem;
+    font-family: 'Cooper';
+    grid-template-columns: 50% 50%;
+    grid-template-rows: repeat(4, 1fr);
     background-color: #C35F75;
-    height: 35rem;
-    width: 25rem;
+    color: #FFFFFF;
+    height: 40rem;
+    width: 30rem;
     margin: 10rem;
+    border-radius: .8rem;
     display: grid; }
+    .library__book-close {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin-left: 1.5rem;
+      transform: translateY(-1rem);
+      z-index: 10;
+      color: #4E4859;
+      grid-column: 1 / span 1;
+      font-size: 6rem; }
+    .library__book-read {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      margin-right: 1.5rem;
+      transform: translateY(-1rem);
+      z-index: 10;
+      color: #4E4859;
+      grid-column: 2 / span 1;
+      font-size: 6rem; }
+    .library__book-name {
+      z-index: 10;
+      margin-left: 3rem;
+      font-size: 3.5rem;
+      grid-column: 1 / span 2;
+      grid-row: 2 / span 1; }
+    .library__book-author {
+      z-index: 10;
+      margin-left: 1.5rem;
+      grid-column: 1 / span 2;
+      grid-row: 3 / span 1; }
+    .library__book-pages {
+      z-index: 10;
+      margin-left: 1.5rem;
+      grid-column: 1 / span 2;
+      grid-row: 4 / span 1; }
+
+@font-face {
+  font-family: 'Cooper';
+  src: url("../css/webfonts/CooperBlack.eot");
+  src: url("../css/webfonts/CooperBlack.eot?#iefix") format("embedded-opentype"), url("../css/webfonts/CooperBlack.woff2") format("woff2"), url("../css/webfonts/CooperBlack.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap; }
+
+@keyframes scale-up-center {
+  0% {
+    transform: scale(1); }
+  100% {
+    transform: scale(1.3); } }

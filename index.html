@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/all.css"> <!--load all fa-styles -->
   <script src="script.js"></script>
   <title>Library</title>
 </head>
@@ -13,19 +14,23 @@
   <div class="header__library">
   LIBRARY
   </div>
-  <div class="header__book">
-  ADD BOOK
-  </div>
-</header>
+  </header>
 
 <body>
+
+ <div class="button__book-container">
+  <div class="button__book">
+  ADD BOOK
+  </div>
+ </div>
+
   <div class="library">
     <div class="library__book">
-      <div class="library__book-close"></div>
-      <div class="library__book-read"></div>
-      <div class="library__book-name"></div>
-      <div class="library__book-author"></div>
-      <div class="library__book-pages"></div>
+      <div class="library__book-close"><i class="fas fa-times"></i></div>
+      <div class="library__book-read"><i class="fas fa-eye"></i></div>
+      <div class="library__book-name">The Hobbit</div>
+      <div class="library__book-author">Author: </div>
+      <div class="library__book-pages">Pages: </div>
     </div>
   </div>
 </body>
