@@ -1,10 +1,10 @@
-// document variables
-const book-card   = document.querySelector('.library__book');
-const book-close  = document.querySelector('.library__close');
-const book-read   = document.querySelector('.library__read');
-const book-name   = document.querySelector('.library__name');
-const book-author = document.querySelector('.library__author');
-const book-pages  = document.querySelector('.library__pages');
+// dom variables
+const Card = document.querySelector('.library__book');
+const Close = document.querySelector('.library__book-close');
+const Read = document.querySelector('.library__book-read');
+const Title = document.querySelector('.library__book-title');
+const Author = document.querySelector('.library__book-author');
+const Page = document.querySelector('.library__book-pages'); 
 
 // array for book objects
 let myLibrary = [];
@@ -23,14 +23,20 @@ function addBookToLibrary(title, author, pages, read) {
   myLibrary.push(Book);
 }
 
-// renders the book object to html
-function render() {
 
-}
+// book button
 
 
 
 
+// book input form
 
-// TESTING: adds test book to library array
+
+
+
+// TESTING: adds test books to library array
 addBookToLibrary('The Hobbit', 'J.R.R Tolkien', '295', 'read');
+addBookToLibrary('Shantaram', 'Gregory David Roberts', '936', 'not read');
+
+// renders the book object properties to html
+

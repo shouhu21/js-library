@@ -19,10 +19,12 @@
   border-radius: .9rem;
   margin: 3rem 3rem;
   padding: .4rem;
-  width: 30%;
+  width: 20%;
+  transition: all .3s;
 
   &:hover {
-  animation: scale-up-center 0.3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  transform: scale(1.2);
+  cursor: pointer;
   }
 
 }
@@ -46,6 +48,11 @@
       margin: 10rem;
       border-radius: .8rem;
       display: grid;
+      transition: all .3s;
+
+      &:hover {
+	transform: scale(1.2);
+      }
         	
      	 &-close {
 	 display: flex;
@@ -53,10 +60,12 @@
 	 justify-content: flex-start;
 	 margin-left: 1.5rem;
 	 transform: translateY(-1rem);
+
 	 z-index: 10;
      	 color: #4E4859; 
      	 grid-column: 1 / span 1;
 	 font-size: 6rem;
+	 cursor: pointer;
      	 }
 
      	 &-read {
@@ -70,6 +79,7 @@
      	 color: #4E4859; 
      	 grid-column: 2 / span 1;
 	 font-size: 6rem;
+	 cursor: pointer;
      	 }
 
      	 &-name {
