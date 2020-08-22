@@ -33,7 +33,6 @@ function addBookToLibrary(title, author, pages, read) {
 
 
 
-
 // TESTING: adds test books to library array
 addBookToLibrary('The Hobbit', 'J.R.R Tolkien', '295', 'read');
 addBookToLibrary('Shantaram', 'Gregory David Roberts', '936', 'not read');
