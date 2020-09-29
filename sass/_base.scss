@@ -6,14 +6,14 @@
 
 body {
   height: 80vh;
-  background-color: #EDEAE4;
+  background-color: #edeae4;
   position: relative;
 }
 
 // header
 header {
-  background-color: #EDEAE4;
-  border-bottom: .8rem solid #4E4859;
+  background-color: #edeae4;
+  border-bottom: 0.8rem solid #4e4859;
   height: 20vh;
   display: flex;
   flex-flow: column;
@@ -22,7 +22,6 @@ header {
 }
 
 .button__book-container {
-	display: flex;
-	justify-content: center;
+  display: flex;
+  justify-content: center;
 }
-

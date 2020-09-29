@@ -1,10 +1,10 @@
 //heading
 .header__library {
-  font-family: 'Cooper';
+  font-family: "Cooper";
   font-size: 10rem;
-  color: #4E4859;
+  color: #4e4859;
   margin: 3rem 2rem;
-  padding: .4rem;
+  padding: 0.4rem;
 }
 
 //add book button
@@ -12,96 +12,97 @@
   display: flex;
   flex-flow: row;
   justify-content: center;
-  font-family: 'Cooper';
+  font-family: "Cooper";
   font-size: 4.5rem;
-  color: #4E4859;
-  border: .4rem solid;
-  border-radius: .9rem;
+  color: #4e4859;
+  border: 0.4rem solid;
+  border-radius: 0.9rem;
   margin: 3rem 3rem;
-  padding: .4rem;
+  padding: 0.4rem;
   width: 20%;
-  transition: all .3s;
+  transition: all 0.3s;
 
   &:hover {
-  transform: scale(1.2);
-  cursor: pointer;
+    transform: scale(1.2);
+    cursor: pointer;
   }
-
 }
-
 
 //book card
 .library {
   display: flex;
 
-      &__book {
-      display: grid;
-      z-index: 2;
-      font-size: 3rem;
-      font-family: 'Cooper';
-      grid-template-columns: 50% 50%;
-      grid-template-rows: repeat(4, 1fr);
-      background-color: #C35F75;
-      color: #FFFFFF;
-      height: 40rem;
-      width: 30rem;
-      margin: 10rem;
-      border-radius: .8rem;
-      display: grid;
-      transition: all .3s;
+  &__book {
+    display: grid;
+    z-index: 2;
+    font-size: 3rem;
+    font-family: "Cooper";
+    grid-template-columns: 50% 50%;
+    grid-template-rows: repeat(4, 1fr);
+    background-color: #c35f75;
+    color: #ffffff;
+    height: 40rem;
+    width: 30rem;
+    margin: 10rem;
+    border-radius: 0.8rem;
+    display: grid;
+    transition: all 0.3s;
 
-      &:hover {
-	transform: scale(1.2);
-      }
-        	
-     	 &-close {
-	 display: flex;
-	 align-items: center;
-	 justify-content: flex-start;
-	 margin-left: 1.5rem;
-	 transform: translateY(-1rem);
+    &:hover {
+      transform: scale(1.2);
+    }
 
-	 z-index: 10;
-     	 color: #4E4859; 
-     	 grid-column: 1 / span 1;
-	 font-size: 6rem;
-	 cursor: pointer;
-     	 }
+    &-close {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin-left: 1.5rem;
+      transform: translateY(-1rem);
 
-     	 &-read {
-	 display: flex;
-	 align-items: center;
-	 justify-content: flex-end;
-	 margin-right: 1.5rem;
-	 transform: translateY(-1rem);
+      z-index: 10;
+      color: #4e4859;
+      grid-column: 1 / span 1;
+      font-size: 6rem;
+      cursor: pointer;
+    }
 
-	 z-index: 10;
-     	 color: #4E4859; 
-     	 grid-column: 2 / span 1;
-	 font-size: 6rem;
-	 cursor: pointer;
-     	 }
+    &-read {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      margin-right: 1.5rem;
+      transform: translateY(-1rem);
 
-     	 &-name {
-	 z-index: 10;
-	 margin-left: 3rem;
-	 font-size: 3.5rem;
-     	 grid-column: 1 / span 2;
-     	 grid-row: 2 / span 1;
-     	 }
+      z-index: 10;
+      color: #4e4859;
+      grid-column: 2 / span 1;
+      font-size: 6rem;
+      cursor: pointer;
+    }
 
-     	 &-author{
-         z-index: 10;
-	 margin-left: 1.5rem;
-     	 grid-column: 1 / span 2;
-     	 grid-row: 3 / span 1;
-     	 }
+    &-name {
+      z-index: 10;
+      margin-left: 3rem;
+      font-size: 3.5rem;
+      grid-column: 1 / span 2;
+      grid-row: 2 / span 1;
+    }
 
-     	 &-pages {
-	 z-index: 10;
-	 margin-left: 1.5rem;
-     	 grid-column: 1 / span 2;
-     	 grid-row: 4 / span 1;
-     	 }
+    &-author {
+      font-size: 2.5rem;
+      z-index: 10;
+      margin-left: 1.5rem;
+      grid-column: 1 / span 2;
+      grid-row: 3 / span 1;
+
+    }
+
+    &-pages {
+      font-size: 2.5rem;
+      z-index: 10;
+      margin-left: 1.5rem;
+      grid-column: 1 / span 2;
+      grid-row: 4 / span 1;
+    }
   }
 }
