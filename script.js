@@ -24,8 +24,23 @@ function addBookToLibrary(title, author, pages, read) {
 }
 
 // book button
+document
+  .querySelector(".button__book")
+  .addEventListener("click", activateForm());
+
+// activate form
+function activateForm() {
+  document.querySelector(".form-container").classList.toggle("active");
+}
 
 // book input form
+function bookInput() {
+  let bookTitle = document.getElementById("title").value;
+  let bookAuthor = document.getElementById("author").value;
+  let bookPages = document.getElementById("pages").value;
+  let bookRead = document.getElementById("read").value;
+  addBookToLibrary(bookTitle, bookAuthor, bookPages, bookRead);
+}
 
 // TESTING: adds test books to library array
 addBookToLibrary("The Hobbit", "J.R.R Tolkien", "295", "read");
@@ -40,5 +55,3 @@ function render() {
     Page.innerHTML = "Pages:<br>" + book.pages;
   }
 }
-
-render()

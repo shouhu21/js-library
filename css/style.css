@@ -105,6 +105,15 @@ header {
       grid-column: 1 / span 2;
       grid-row: 4 / span 1; }
 
+.active {
+  display: flex; }
+
+.form-container {
+  justify-content: center;
+  align-items: center;
+  font-family: "Cooper";
+  font-size: 10rem; }
+
 @font-face {
   font-family: "Cooper";
   src: url("../css/webfonts/CooperBlack.eot");
