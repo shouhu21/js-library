@@ -23,23 +23,50 @@ function addBookToLibrary(title, author, pages, read) {
   myLibrary.push(Book);
 }
 
-// book button
-document
-  .querySelector(".button__book")
-  .addEventListener("click", activateForm());
+// get input values
+let bookTitle;
+let bookAuthor;
+let bookPages;
+let bookRead;
 
-// activate form
-function activateForm() {
-  document.querySelector(".form-container").classList.toggle("active");
+function getInput() {
+  let inputTitle = document.getElementById("title");
+  let inputAuthor = document.getElementById("author");
+  let inputPages = document.getElementById("pages");
+  let inputRead = document.getElementById("read");
+
+  bookTitle = inputTitle.value;
+  bookAuthor = inputAuthor.value;
+  bookPages = inputPages.value;
+  bookRead = inputRead.value;
 }
 
-// book input form
-function bookInput() {
-  let bookTitle = document.getElementById("title").value;
-  let bookAuthor = document.getElementById("author").value;
-  let bookPages = document.getElementById("pages").value;
-  let bookRead = document.getElementById("read").value;
+// form control
+function showForm() {
+  document
+    .querySelector(".form-container")
+    .style.setProperty("display", "flex");
+}
+
+function hideForm() {
+  document
+    .querySelector(".form-container")
+    .style.setProperty("display", "none");
+}
+// add book button
+document.querySelector(".button__addbook").addEventListener("click", showForm);
+
+// submit book button
+document.querySelector(".button__submit").addEventListener("click", () => {
+  getInput();
   addBookToLibrary(bookTitle, bookAuthor, bookPages, bookRead);
+  resetForm();
+  hideForm();
+});
+
+// reset form
+function resetForm() {
+  document.getElementById("InputFields").reset();
 }
 
 // TESTING: adds test books to library array

@@ -28,7 +28,7 @@ header {
   margin: 3rem 2rem;
   padding: 0.4rem; }
 
-.button__book {
+.button__addbook {
   display: flex;
   flex-flow: row;
   justify-content: center;
@@ -41,7 +41,7 @@ header {
   padding: 0.4rem;
   width: 20%;
   transition: all 0.3s; }
-  .button__book:hover {
+  .button__addbook:hover {
     transform: scale(1.2);
     cursor: pointer; }
 
@@ -105,10 +105,8 @@ header {
       grid-column: 1 / span 2;
       grid-row: 4 / span 1; }
 
-.active {
-  display: flex; }
-
 .form-container {
+  display: none;
   justify-content: center;
   align-items: center;
   font-family: "Cooper";

@@ -8,7 +8,7 @@
 }
 
 //add book button
-.button__book {
+.button__addbook {
   display: flex;
   flex-flow: row;
   justify-content: center;
@@ -107,11 +107,8 @@
 }
 
 // book input form
-.active {
-  display: flex;
-}
-
 .form-container {
+  display: none;
   justify-content: center;
   align-items: center;
   font-family: "Cooper";

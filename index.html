@@ -17,11 +17,11 @@
 
   <body>
     <div class="button__book-container">
-      <button class="button__book">ADD<br />BOOK</button>
+      <button class="button__addbook">ADD<br />BOOK</button>
     </div>
 
     <div class="form-container">
-      <form onsubmit="bookInput()">
+      <form id="InputFields">
         <label for="title">Title</label>
         <input id="title" type="text" />
         <br />
@@ -35,7 +35,7 @@
         <input id="read" type="checkbox" />
         <br />
         <center>
-          <input type="submit" value="Submit" />
+          <button class="button__submit" type="button">Submit</button>
         </center>
       </form>
     </div>
