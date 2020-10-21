@@ -30,7 +30,13 @@
 
 //book card
 .library {
+  overflow: hidden;
+  width: 100vw;
   display: flex;
+  flex-flow: row;
+  flex-basis: min-content;
+  flex-wrap: wrap;
+  justify-self: center;
 
   &__book {
     display: grid;
@@ -43,7 +49,7 @@
     color: #ffffff;
     height: 40rem;
     width: 30rem;
-    margin: 10rem;
+    margin: 9rem;
     border-radius: 0.8rem;
     display: grid;
     transition: all 0.3s;
