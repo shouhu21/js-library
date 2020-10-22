@@ -1,18 +1,6 @@
 // array for book objects
 let myLibrary = [];
 
-// // dom variables
-// const Card = document.createElement("div").classList.add("library__book");
-// const Close = document
-//   .createElement("div")
-//   .classList.add("library__book-close");
-// const Read = document.createElement("div").classList.add("library__book-read");
-// const Title = document.createElement("div").classList.add("library__book-name");
-// const Author = document
-//   .createElement("div")
-//   .classList.add("library__book-author");
-// const Page = document.createElement("div").classList.add("library__book-pages");
-
 // book constructor
 function book(title, author, pages, read) {
   (this.title = title),
@@ -23,26 +11,17 @@ function book(title, author, pages, read) {
 
 // adds a book to the library array
 function addBookToLibrary(title, author, pages, read) {
-  let Book = new book(title, author, pages, read);
-  myLibrary.push(Book);
-}
-
-// get input values
-let bookTitle;
-let bookAuthor;
-let bookPages;
-let bookRead;
-
-function getInput() {
   let inputTitle = document.getElementById("title");
   let inputAuthor = document.getElementById("author");
   let inputPages = document.getElementById("pages");
   let inputRead = document.getElementById("read");
+  this.title = inputTitle.value;
+  this.author = inputAuthor.value;
+  this.pages = inputPages.value;
+  this.read = inputRead.value;
 
-  bookTitle = inputTitle.value;
-  bookAuthor = inputAuthor.value;
-  bookPages = inputPages.value;
-  bookRead = inputRead.value;
+  let Book = new book(this.title, this.author, this.pages, this.read);
+  myLibrary.push(Book);
 }
 
 // form control
@@ -62,10 +41,8 @@ document.querySelector(".button__addbook").addEventListener("click", showForm);
 
 // submit book button
 document.querySelector(".button__submit").addEventListener("click", () => {
-  getInput();
-  createCard();
-  addBookToLibrary(bookTitle, bookAuthor, bookPages, bookRead);
-  myLibrary.forEach(render);
+  addBookToLibrary();
+  createBook();
   resetForm();
   hideForm();
 });
@@ -75,12 +52,10 @@ function resetForm() {
   document.getElementById("InputFields").reset();
 }
 
-// TESTING: adds test books to library array
-//addBookToLibrary("The Hobbit", "J.R.R Tolkien", "295", "read");
-//addBookToLibrary("Shantaram", "Gregory David Roberts", "936", "not read");
-
 // creates book "card"
-function createCard() {
+function createBook(book) {
+
+  //createDomElements
   let libraryContainer = document.querySelector(".library");
   let bookContainer = document.createElement("div");
   let closeHTML = document.createElement("div");
@@ -89,33 +64,45 @@ function createCard() {
   let authorHTML = document.createElement("div");
   let pagesHTML = document.createElement("div");
 
-  bookContainer.classList.add("library__book");
-  closeHTML.classList.add("library__book-close");
-  readHTML.classList.add("library__book-read");
-  nameHTML.classList.add("library__book-name");
-  authorHTML.classList.add("library__book-author");
-  pagesHTML.classList.add("library__book-pages");
+  myLibrary.forEach((book, i) => {
+    //createId
+    book.id = i + 1;
 
-  closeHTML.innerHTML = "<i class='fas fa-times'></i>";
-  readHTML.innerHTML = "<i class='fas fa-eye'></i>";
-  nameHTML.innerHTML = "";
-  authorHTML.innerHTML = "Author:";
-  pagesHTML.innerHTML = "Pages:";
+    //createCard;
+    bookContainer.classList.add("library__book");
+    closeHTML.classList.add("library__book-close");
+    readHTML.classList.add("library__book-read");
+    nameHTML.classList.add("library__book-name");
+    authorHTML.classList.add("library__book-author");
+    pagesHTML.classList.add("library__book-pages");
 
-  libraryContainer.appendChild(bookContainer);
-  bookContainer.appendChild(closeHTML);
-  bookContainer.appendChild(readHTML);
-  bookContainer.appendChild(nameHTML);
-  bookContainer.appendChild(authorHTML);
-  bookContainer.appendChild(pagesHTML);
-}
+    bookContainer.setAttribute("id", "container" + `${book.id}`);
+    closeHTML.setAttribute("id", "close" + `${book.id}`);
+    readHTML.setAttribute("id", "read" + `${book.id}`);
+    nameHTML.setAttribute("id", "name" + `${book.id}`);
+    authorHTML.setAttribute("id", "author" + `${book.id}`);
+    pagesHTML.setAttribute("id", "pages" + `${book.id}`);
 
-// renders the book object properties to html
-function render(book) {
-  let renderName = document.querySelector(".library__book-name");
-  let renderAuthor = document.querySelector(".library__book-author");
-  let renderPage = document.querySelector(".library__book-pages");
-  renderName.innerHTML = book.title;
-  renderAuthor.innerHTML = "Author:<br>" + book.author;
-  renderPage.innerHTML = "Pages:<br>" + book.pages;
+    closeHTML.innerHTML = "<i class='fas fa-times'></i>";
+    readHTML.innerHTML = "<i class='fas fa-eye'></i>";
+    nameHTML.innerHTML = "";
+    authorHTML.innerHTML = "Author:";
+    pagesHTML.innerHTML = "Pages:";
+
+    libraryContainer.appendChild(bookContainer);
+    bookContainer.appendChild(closeHTML);
+    bookContainer.appendChild(readHTML);
+    bookContainer.appendChild(nameHTML);
+    bookContainer.appendChild(authorHTML);
+    bookContainer.appendChild(pagesHTML);
+
+    //renderInput;
+    let renderName = document.getElementById("name" + `${book.id}`);
+    let renderAuthor = document.getElementById("author" + `${book.id}`);
+    let renderPage = document.getElementById("pages" + `${book.id}`);
+
+    renderName.innerHTML = book.title;
+    renderAuthor.innerHTML = "Author:<br>" + book.author;
+    renderPage.innerHTML = "Pages:<br>" + book.pages;
+  });
 }
