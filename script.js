@@ -54,7 +54,6 @@ function resetForm() {
 
 // creates book "card"
 function createBook(book) {
-
   //createDomElements
   let libraryContainer = document.querySelector(".library");
   let bookContainer = document.createElement("div");
@@ -66,7 +65,7 @@ function createBook(book) {
 
   myLibrary.forEach((book, i) => {
     //createId
-    book.id = i + 1;
+    book.id = i;
 
     //createCard;
     bookContainer.classList.add("library__book");
@@ -106,3 +105,24 @@ function createBook(book) {
     renderPage.innerHTML = "Pages:<br>" + book.pages;
   });
 }
+
+// remove book from library
+let removeButton = document.getElementById("close"+`${book.id}`);
+
+function removeBook() {
+  myLibrary.splice(0, 1);
+}
+
+removeButton.addEventListener("click", removeBook);
+
+// change read status
+let readButton = document.querySelectorAll(".library__book-read");
+function changeRead(book) {
+  if ((book.read = "on")) {
+    book.read = "off";
+  } else if ((book.read = "off")) {
+    book.read = "on";
+  }
+}
+
+readButton.addEventListener("click", changeRead);
