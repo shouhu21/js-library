@@ -52,16 +52,25 @@ function resetForm() {
   document.getElementById("InputFields").reset();
 }
 
+//dom variables
+let libraryContainer;
+let bookContainer;
+let closeHTML;
+let readHTML;
+let nameHTML;
+let authorHTML;
+let pagesHTML;
+
 // creates book "card"
 function createBook(book) {
   //createDomElements
-  let libraryContainer = document.querySelector(".library");
-  let bookContainer = document.createElement("div");
-  let closeHTML = document.createElement("div");
-  let readHTML = document.createElement("div");
-  let nameHTML = document.createElement("div");
-  let authorHTML = document.createElement("div");
-  let pagesHTML = document.createElement("div");
+  libraryContainer = document.querySelector(".library");
+  bookContainer = document.createElement("div");
+  closeHTML = document.createElement("div");
+  readHTML = document.createElement("div");
+  nameHTML = document.createElement("div");
+  authorHTML = document.createElement("div");
+  pagesHTML = document.createElement("div");
 
   myLibrary.forEach((book, i) => {
     //createId
@@ -76,7 +85,7 @@ function createBook(book) {
     pagesHTML.classList.add("library__book-pages");
 
     bookContainer.setAttribute("id", "container" + `${book.id}`);
-    closeHTML.setAttribute("id", "close" + `${book.id}`);
+    closeHTML.setAttribute("id", /* "close" +*/ `${book.id}`);
     readHTML.setAttribute("id", "read" + `${book.id}`);
     nameHTML.setAttribute("id", "name" + `${book.id}`);
     authorHTML.setAttribute("id", "author" + `${book.id}`);
@@ -103,26 +112,35 @@ function createBook(book) {
     renderName.innerHTML = book.title;
     renderAuthor.innerHTML = "Author:<br>" + book.author;
     renderPage.innerHTML = "Pages:<br>" + book.pages;
+
+    closeHTML.setAttribute("onclick", "removeBook()");
   });
 }
 
 // remove book from library
-let removeButton = document.getElementById("close"+`${book.id}`);
+function removeBook(id) {
+  id = closeHTML.id;
 
-function removeBook() {
-  myLibrary.splice(0, 1);
+  let bookCards = document.querySelectorAll(".library__book");
+  bookCardsArray = Array.from(bookCards);
+
+  bookCardsArray.forEach(removeDisplay(id));
+
+  function removeDisplay(id) {
+    bookCardsArray[id].style.display = "none";
+  }
+
+  myLibrary /*[`${closeHTML.id}` id]*/
+    .splice(id, 1);
 }
-
-removeButton.addEventListener("click", removeBook);
 
 // change read status
-let readButton = document.querySelectorAll(".library__book-read");
-function changeRead(book) {
-  if ((book.read = "on")) {
-    book.read = "off";
-  } else if ((book.read = "off")) {
-    book.read = "on";
-  }
-}
-
-readButton.addEventListener("click", changeRead);
+// let readButton = document.querySelectorAll(".library__book-read");
+// readButton.addEventListener("click", changeRead);
+// function changeRead(book) {
+//   if ((book.read = "on")) {
+//     book.read = "off";
+//   } else if ((book.read = "off")) {
+//     book.read = "on";
+//   }
+// }
