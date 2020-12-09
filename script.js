@@ -130,8 +130,7 @@ function removeBook(id) {
     bookCardsArray[id].style.display = "none";
   }
 
-  myLibrary /*[`${closeHTML.id}` id]*/
-    .splice(id, 1);
+  myLibrary.splice(id, 1);
 }
 
 // change read status
