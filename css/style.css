@@ -13,7 +13,7 @@ body {
 
 header {
   background-color: #edeae4;
-  border-bottom: 0.8rem solid #4e4859;
+  border-bottom: 1.1rem solid #4e4859;
   height: 20vh;
   display: flex;
   flex-flow: column;
